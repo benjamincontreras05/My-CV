@@ -1,0 +1,461 @@
+/* ==========================================================================
+   1. DESIGN SYSTEM VARIABLES (Premium Beige & Solid Black)
+   ========================================================================= */
+:root {
+    --beige-pastel: #F3EFE0;    /* Luxurious, rich warm beige pastel for website background */
+    --blanco-puro: #FFFFFF;     /* Pure white for inner card containers */
+    --gris-borde: #DCD6CD;      /* Subtle grid divider tone */
+    --gris-tarjeta: #EAE6D8;    /* Slightly darker beige-grey accent for project cards */
+    --gris-medio: #605E56;      /* Slate charcoal for clean typography readability */
+    --negro-formal: #111111;    /* Stark corporate black for navigation, buttons, and titles */
+    
+    --fuente-principal: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --max-width: 1050px;
+}
+
+/* ==========================================================================
+   2. GLOBAL STYLE LIGHT RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--beige-pastel);
+    color: var(--negro-formal);
+    font-family: var(--fuente-principal);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+section {
+    padding: 6rem 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+/* ==========================================================================
+   3. NAVIGATION & HERO (High-Contrast Executive Feel)
+   ========================================================================== */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--negro-formal);
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    border-bottom: 2px solid var(--gris-borde);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav a {
+    color: var(--beige-pastel);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+nav a:hover {
+    color: var(--blanco-puro);
+}
+
+header {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.profile-img-container {
+    display: inline-block;
+    padding: 10px;
+    background-color: var(--blanco-puro);
+    border: 2px solid var(--negro-formal);
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.profile-img {
+    width: 190px;  
+    height: 190px; 
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: var(--gris-borde);
+    display: block;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+header h2 {
+    font-size: 1.6rem;
+    color: var(--gris-medio);
+    font-weight: 500;
+    margin-bottom: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--negro-formal);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   4. ABOUT ME SECTION
+   ========================================================================== */
+#about-me h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+}
+
+#about-me p {
+    font-size: 1.1rem;
+    margin-bottom: 1.75rem;
+    color: var(--negro-formal);
+    max-width: 850px;
+    text-align: justify;
+}
+
+#about-me strong {
+    font-weight: 700;
+    border-bottom: 2px solid var(--gris-borde);
+}
+
+/* ==========================================================================
+   5. FEATURED PROJECTS SECTION (Creative Neobrutalism Redesign)
+   ========================================================================== */
+#projects h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--gris-medio);
+    margin-bottom: 4rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 3.5rem;
+}
+
+.project-card {
+    background-color: var(--gris-tarjeta);
+    border: 2px solid var(--negro-formal);
+    padding: 2.5rem;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 5px 5px 0px var(--negro-formal);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+    position: relative;
+}
+
+.creative-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 9px 9px 0px var(--negro-formal);
+}
+
+.card-header-tech {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 2px solid var(--negro-formal);
+    margin: -2.5rem -2.5rem 0rem -2.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--blanco-puro);
+}
+
+.card-header-tech .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--negro-formal);
+}
+.card-header-tech .dot:nth-child(1) { background-color: #FF5F56; }
+.card-header-tech .dot:nth-child(2) { background-color: #FFBD2E; }
+.card-header-tech .dot:nth-child(3) { background-color: #27C93F; }
+
+.card-header-tech .file-name {
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-left: 10px;
+    color: var(--gris-medio);
+}
+
+.project-image-container {
+    width: calc(100% + 5rem);
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 2px solid var(--negro-formal);
+    margin: 0rem -2.5rem 1.5rem -2.5rem;
+    background-color: var(--blanco-puro);
+    padding: 15px; /* Agrega espacio para que el logo respire dentro del cuadro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Cambiado a contain para encuadrar la imagen completa */
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-preview-img {
+    transform: scale(1.04);
+}
+
+.project-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-family: monospace;
+}
+
+.markdown-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.md-section h4 {
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: var(--gris-medio);
+    margin-bottom: 0.25rem;
+}
+
+.md-section p {
+    font-size: 0.95rem;
+    color: var(--negro-formal);
+}
+
+.project-tech {
+    font-size: 0.85rem;
+    color: var(--negro-formal);
+    font-family: monospace;
+    font-weight: 400;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    background-color: rgba(250, 250, 250, 0.5);
+    padding: 0.5rem;
+    border-left: 3px solid var(--negro-formal);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--negro-formal);
+    color: var(--beige-pastel);
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 0px;
+    text-align: center;
+    flex: 1;
+    border: 2px solid var(--negro-formal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btn:hover {
+    background-color: var(--blanco-puro);
+    color: var(--negro-formal);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--negro-formal);
+    border: 2px solid var(--negro-formal);
+}
+
+.btn-secondary:hover {
+    background-color: var(--negro-formal);
+    color: var(--beige-pastel);
+}
+
+/* ==========================================================================
+   6. SKILLS SECTION
+   ========================================================================== */
+#skills h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.skills-list li {
+    background-color: var(--blanco-puro);
+    border: 2px solid var(--negro-formal);
+    padding: 0.7rem 1.5rem;
+    border-radius: 0px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: 2px 2px 0px var(--negro-formal);
+}
+
+/* ==========================================================================
+   7. FOOTER SECTION
+   ========================================================================== */
+footer {
+    padding: 7rem 2rem;
+    text-align: center;
+    background-color: var(--negro-formal);
+    color: var(--beige-pastel);
+    border-top: 2px solid var(--gris-borde);
+}
+
+footer h2 {
+    font-size: 2.4rem;
+    color: var(--blanco-puro);
+    margin-bottom: 1.25rem;
+}
+
+footer p {
+    color: var(--gris-borde);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.contact-links a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.4rem;
+}
+
+.contact-links a:hover {
+    border-color: var(--beige-pastel);
+    color: var(--blanco-puro);
+}
+
+.credits {
+    font-size: 0.85rem;
+    color: #55534C !important;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   8. MOBILE RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+    
+    nav ul {
+        gap: 1.25rem;
+        flex-wrap: wrap;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    section {
+        padding: 4.5rem 1.5rem;
+    }
+    
+    .project-card {
+        padding: 1.75rem;
+    }
+    
+    .project-links {
+flex-direction: column;
+gap: 0.75rem;
+}
+.card-header-tech {
+margin: -1.75rem -1.75rem 0rem -1.75rem;
+}
+.project-image-container {
+width: calc(100% + 3.5rem);
+margin: 0rem -1.75rem 1.5rem -1.75rem;
+padding: 10px;
+}
+}
+/* ==========================================================================
+9. STREAMLINED MOTION CURVE ANIMATION
+========================================================================== */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(25px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+.anim-fade-1, .anim-fade-2, .anim-fade-3, .anim-fade-4 {
+opacity: 0;
+animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.anim-fade-1 { animation-delay: 0.15s; }
+.anim-fade-2 { animation-delay: 0.35s; }
+.anim-fade-3 { animation-delay: 0.55s; }
+.anim-fade-4 { animation-delay: 0.75s; }
