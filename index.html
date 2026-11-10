@@ -1,15 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portfolio of Eliazar Benjamín Cuchilla Contreras, Junior Fullstack Developer: projects, skills and contact.">
+
     <title>Eliazar Cuchilla | Fullstack Developer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
 
-    <!-- 1. NAVIGATION & HERO (Home) -->
-    <nav>
+    <!-- NAVIGATION -->
+    <nav aria-label="Main">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about-me">About Me</a></li>
@@ -19,136 +30,285 @@
         </ul>
     </nav>
 
+    <!-- HERO -->
     <header id="home">
         <div class="hero-content">
+
             <div class="profile-img-container anim-fade-1">
-                <img src="Photo/PictureProfile.jpeg" alt="Eliazar Benjamín Cuchilla" class="profile-img" onerror="this.style.display='none'">
+                <img
+                    src="Photo/PictureProfile.jpeg"
+                    alt="Eliazar Benjamín Cuchilla"
+                    class="profile-img"
+                    onerror="this.style.display='none'"
+                >
             </div>
-            <h1 class="anim-fade-2">Eliazar Benjamín Cuchilla Contreras</h1>
-            <h2 class="anim-fade-3">Junior Fullstack Developer</h2>
-            <p class="tagline anim-fade-4">Building comprehensive web solutions, connecting efficient backend logic with interfaces that make sense.</p>
+
+            <h1 class="anim-fade-2">
+                Eliazar Benjamín Cuchilla Contreras
+            </h1>
+
+            <h2 class="anim-fade-3">
+                Junior Fullstack Developer
+            </h2>
+
+            <p class="tagline anim-fade-4">
+                Building comprehensive web solutions, connecting efficient backend logic with interfaces that make sense.
+            </p>
+
+            <div class="hero-actions anim-fade-4">
+                <a href="#projects" class="btn btn-accent">See my projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact me</a>
+            </div>
+
         </div>
     </header>
 
-    <!-- 2. ABOUT ME -->
+    <!-- ABOUT ME -->
     <section id="about-me">
+
         <h2>About Me</h2>
-        <p>My academic path began at Complejo Educativo Comunidad San Bartolo del Norte and continued at Centro Educativo Fabio Castillo, where I completed my high school degree. Currently, I am accelerating my professional and technical growth at the prestigious <strong>¡Supérate! Business Program at Centro ADOC</strong>, consolidating specialized training in programming and software development.</p>
-        
-        <p>My fascination with technology fully ignited during the development of <strong>GOLDTY</strong>, an EXPO project that demonstrated the tangible impact software can achieve. From that moment on, I discovered a deep passion for this innovative ecosystem and recognized the vast career trajectory, professional growth, and economic opportunities within the tech industry.</p>
-        
-        <p>What truly drives me as a Fullstack developer is the craftsmanship behind building websites: watching the logic synchronize, seeing user interfaces take functional form, and ensuring data connections operate flawlessly. I enjoy writing clean code, understand complex workflows, and validate my effort through robust solutions that address real-world needs.</p>
+
+        <p class="lead">
+            My fascination with technology fully ignited during the development of <strong>GOLDTY</strong>, an EXPO project that showed me the tangible impact software can achieve.
+        </p>
+
+        <p>
+            My academic path began at Complejo Educativo Comunidad San Bartolo del Norte and continued at Centro Educativo Fabio Castillo, where I completed my high school degree. Today I am growing professionally at the <strong>¡Supérate! Business Program at Centro ADOC</strong>, consolidating specialized training in programming and software development.
+        </p>
+
+        <p>
+            What drives me as a Fullstack developer is the craftsmanship behind building websites: watching the logic synchronize, seeing interfaces take functional form, and making sure data connections work flawlessly. I enjoy writing clean code, understanding complex workflows, and validating my effort with robust solutions to real-world needs.
+        </p>
+
     </section>
 
-    <!-- 3. PROJECTS (Creative Case Studies) -->
+    <!-- PROJECTS -->
     <section id="projects">
+
         <h2>Featured Projects</h2>
-        <p class="subtitle">Case studies and software solutions driven by real-world impact</p>
-        
+
+        <p class="subtitle">
+            Case studies and software solutions driven by real-world impact
+        </p>
+
         <div class="projects-grid">
-            
-            <!-- CASE STUDY 1: GOLDTY -->
-            <article class="project-card creative-card">
+
+            <!-- GOLDTY -->
+            <article class="project-card">
+
                 <div class="card-header-tech">
-                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                     <span class="file-name">GOLDTY.md</span>
                 </div>
 
                 <div class="project-image-container">
-                    <img src="Photo/GOLDTY.jpeg" alt="GOLDTY Application Preview" class="project-preview-img">
+                    <img
+                        src="Photo/GOLDTY.jpeg"
+                        alt="GOLDTY application preview"
+                        class="project-preview-img"
+                    >
                 </div>
-                
-                <h3># GOLDTY — Virtual Agenda & Productivity Platform</h3>
-                
+
+                <h3># GOLDTY: Virtual Agenda &amp; Productivity Platform</h3>
+
                 <div class="markdown-body">
+
                     <div class="md-section">
                         <h4>## The Problem</h4>
-                        <p>Physical agendas are often inefficient, frustrating, and prone to losing track of critical events. Students lacked a centralized digital tool to classify priorities and optimize their study routines.</p>
+                        <p>
+                            Physical agendas are often inefficient and make it easy to lose track of critical events. Students lacked a centralized digital tool to classify priorities and optimize their study routines.
+                        </p>
                     </div>
 
                     <div class="md-section">
-                        <h4>## Process & Engineering Challenges</h4>
-                        <p>Developed in a dynamic team environment. We faced major communication bottlenecks, design discrepancies, and code conflicts. We successfully resolved these through assertive mediation, establishing clear UI patterns, and conducting rigorous AI-assisted code reviews.</p>
+                        <h4>## Process &amp; Engineering Challenges</h4>
+                        <p>
+                            Built in a dynamic team. We faced communication bottlenecks, design discrepancies, and code conflicts, and resolved them through assertive mediation, clear UI patterns, and rigorous AI-assisted code reviews.
+                        </p>
                     </div>
 
                     <div class="md-section">
                         <h4>## The Solution</h4>
-                        <p>An interactive web platform based on time-management matrices that separates urgent, important, and non-important tasks. It integrates performance tools like the Pomodoro technique to maximize student focus.</p>
+                        <p>
+                            An interactive web platform based on time-management matrices that separates urgent, important, and non-important tasks, with tools like the Pomodoro technique to maximize focus.
+                        </p>
                     </div>
+
                 </div>
-                
-                <p class="project-tech"><strong>tech_stack:</strong> [HTML5, CSS3, JavaScript, Node.js, Supabase]</p>
-                
+
+                <p class="project-tech">
+                    <strong>tech_stack:</strong> [HTML5, CSS3, JavaScript, Node.js, Supabase]
+                </p>
+
                 <div class="project-links">
-                    <a href="#" target="_blank" class="btn">Live Demo</a>
-                    <a href="https://github.com" target="_blank" class="btn btn-secondary">Repository</a>
+
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn">
+                        Live Demo
+                    </a>
+
+                    <a href="https://github.com/benjamincontreras05" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        Repository
+                    </a>
+
                 </div>
+
             </article>
 
-            <!-- PROJECT 2: TASK AUTOMATOR -->
-            <article class="project-card creative-card">
+            <!-- TECHGUIDE -->
+            <article class="project-card">
+
                 <div class="card-header-tech">
-                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                    <span class="file-name">TaskAutomator.md</span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="file-name">TechGuide.md</span>
                 </div>
 
                 <div class="project-image-container">
-                    <img src="https://unsplash.com" alt="Task Automator Preview" class="project-preview-img">
+                    <img
+                        src="Photo/TechGuide.png"
+                        alt="TechGuide website preview"
+                        class="project-preview-img"
+                    >
                 </div>
-                
-                <h3># Task Automator — Local Network Manager</h3>
-                
+
+                <h3># TechGuide: AI-Powered Electronic Device Assistant</h3>
+
                 <div class="markdown-body">
+
                     <div class="md-section">
                         <h4>## The Problem</h4>
-                        <p>The need to centralize system reminders and lightweight terminal executions within a local intranet workspace without relying on heavy cloud architectures.</p>
+                        <p>
+                            Many people struggle to identify electronic devices and understand their purpose due to limited technological knowledge. This creates barriers to learning and interacting with everyday technology.
+                        </p>
                     </div>
 
                     <div class="md-section">
                         <h4>## The Solution</h4>
-                        <p>An ultra-lightweight web tool linked to a Node.js REST API that efficiently manages quick storage pipelines, addressing local data persistence directly.</p>
+                        <p>
+                            TechGuide is an AI-powered website designed to recognize electronic devices through image detection. It identifies objects and provides their names, helping users become familiar with technology and understand the devices around them.
+                        </p>
                     </div>
+
+                    <div class="md-section">
+                        <h4>## The Impact</h4>
+                        <p>
+                            By combining artificial intelligence with an accessible web interface, TechGuide makes technology easier to understand, encourages digital inclusion, and helps people develop confidence when interacting with electronic devices.
+                        </p>
+                    </div>
+
                 </div>
-                
-                <p class="project-tech"><strong>tech_stack:</strong> [HTML5, CSS3, JavaScript, Node.js, Supabase]</p>
-                
+
+                <p class="project-tech">
+                    <strong>tech_stack:</strong> [HTML5, CSS3, JavaScript, Artificial Intelligence]
+                </p>
+
                 <div class="project-links">
-                    <a href="#" target="_blank" class="btn">Live Demo</a>
-                    <!-- Enlace actualizado a tu perfil de GitHub -->
-                    <a href="https://github.com/benjamincontreras05" target="_blank" class="btn btn-secondary">Repository</a>
+
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn">
+                        Live Demo
+                    </a>
+
+                    <a href="https://github.com/JuanJoCaceres2026/TechGuide"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn btn-secondary">
+                        Repository
+                    </a>
+
                 </div>
+
             </article>
 
         </div>
-    </section>
 
-    <!-- 4. SKILLS -->
+    <!-- SKILLS -->
     <section id="skills">
+
         <h2>Technical Skills</h2>
-        <p class="subtitle">Technologies backed by core training and hands-on laboratory application</p>
+
+        <p class="subtitle">
+            Technologies backed by core training and hands-on laboratory application
+        </p>
+
         <ul class="skills-list">
             <li>HTML5 / CSS3</li>
             <li>JavaScript (ES6+)</li>
             <li>Node.js</li>
             <li>Supabase / PostgreSQL</li>
-            <li>Git & GitHub</li>
+            <li>Git &amp; GitHub</li>
             <li>Fullstack Architecture</li>
             <li>Team Conflict Resolution</li>
         </ul>
+
     </section>
 
-    <!-- 5. CONTACT -->
+    <!-- CONTACT -->
     <footer id="contact">
+
         <h2>Let's Connect</h2>
-        <p>I am actively learning and ready to add value within engineering teams and Fullstack development environments.</p>
+
+        <p>
+            I am actively learning and ready to add value within engineering teams and Fullstack development environments.
+        </p>
+
         <div class="contact-links">
-            <a href="mailto:eliazarbenjamin512@gmail.com">📧 eliazarbenjamin512@gmail.com</a>
-            <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
-            <!-- Enlace del footer actualizado a tu perfil real -->
-            <a href="https://github.com/benjamincontreras05" target="_blank">🐙 GitHub Profile</a>
-        </div>
-        <p class="credits">&copy; 2026 Eliazar Cuchilla. Built with professional industry standards.</p>
+
+    <a href="mailto:eliazarbenjamin512@gmail.com">
+        eliazarbenjamin512@gmail.com
+    </a>
+
+    <a href="https://github.com/benjamincontreras05" target="_blank" rel="noopener noreferrer">
+        GitHub
+    </a>
+
+</div>
+
+        <p class="credits">
+            &copy; 2026 Eliazar Cuchilla
+        </p>
+
     </footer>
+
+    <!-- ACTIVE NAVIGATION -->
+    <script>
+
+        const links = document.querySelectorAll('nav a');
+
+        const sections = [...links].map(link =>
+            document.querySelector(link.getAttribute('href'))
+        );
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    links.forEach(link => {
+
+                        link.classList.toggle(
+                            'active',
+                            link.getAttribute('href') === '#' + entry.target.id
+                        );
+
+                    });
+
+                }
+
+            });
+
+        }, {
+            rootMargin: '-45% 0px -50% 0px'
+        });
+
+        sections.forEach(section => {
+            if (section) observer.observe(section);
+        });
+
+    </script>
 
 </body>
 </html>
