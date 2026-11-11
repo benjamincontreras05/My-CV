@@ -10,14 +10,14 @@
     --ink: #111111;
     --accent: #AEB4BC;
 
-    --font-head: "Space Grotesk", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    --font-mono: "Space Mono", ui-monospace, Consolas, monospace;
+    --font-head: "Space Grotesk", sans-serif;
+    --font-mono: "Space Mono", monospace;
 
     --max-width: 1050px;
     --shadow: 5px 5px 0 var(--ink);
 }
 
-/* ===== 2. RESET ===== */
+/* ===== 2. RESET GLOBAL ===== */
 
 * {
     margin: 0;
@@ -27,10 +27,14 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 85px;
     font-size: 16px;
 }
 
 body {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
     background: var(--beige);
     color: var(--ink);
     font-family: var(--font-head);
@@ -39,10 +43,9 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    margin-bottom: 1rem;
+img {
+    display: block;
+    max-width: 100%;
 }
 
 a {
@@ -51,17 +54,24 @@ a {
     transition: all 0.2s ease;
 }
 
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+}
+
 :focus-visible {
     outline: 3px solid var(--ink);
-    outline-offset: 3px;
+    outline-offset: 4px;
 }
 
 section {
-    padding: 6rem 2rem;
+    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
+    padding: 6rem 2rem;
     border-bottom: 2px solid var(--ink);
-    scroll-margin-top: 3.5rem;
+    scroll-margin-top: 85px;
 }
 
 /* ===== 3. NAVIGATION ===== */
@@ -70,6 +80,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
+    width: 100%;
     background: var(--beige);
     border-bottom: 2px solid var(--ink);
     padding: 0.9rem 1rem;
@@ -78,6 +89,7 @@ nav {
 nav ul {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     list-style: none;
     gap: 0.5rem;
@@ -101,19 +113,23 @@ nav a.active {
 /* ===== 4. HERO ===== */
 
 header {
+    width: 100%;
+    max-width: var(--max-width);
     min-height: 90vh;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 3rem 2rem;
-    max-width: var(--max-width);
-    margin: 0 auto;
+
     border-bottom: 2px solid var(--ink);
-    scroll-margin-top: 3.5rem;
+    scroll-margin-top: 85px;
 }
 
 .hero-content {
+    width: 100%;
     max-width: 750px;
 }
 
@@ -134,24 +150,24 @@ header {
     border-radius: 50%;
     object-fit: cover;
     background: var(--line);
-    display: block;
 }
 
 header h1 {
-    font-size: 3rem;
-    line-height: 1.1;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
     margin-bottom: 0.75rem;
+    overflow-wrap: anywhere;
 }
 
 header h2 {
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
     color: var(--muted);
     font-weight: 500;
     margin-bottom: 1.5rem;
 }
 
 .tagline {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     max-width: 600px;
     margin: 0 auto 2.25rem;
 }
@@ -159,6 +175,7 @@ header h2 {
 .hero-actions {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
 }
@@ -172,21 +189,18 @@ header h2 {
 }
 
 #about-me h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     margin-bottom: 2.5rem;
-    text-align: center;
 }
 
 #about-me p {
     font-size: 1.1rem;
     line-height: 1.85;
-    max-width: 100%;
     margin: 0 auto 1.8rem;
-    text-align: center;
 }
 
 #about-me .lead {
-    font-size: 1.35rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
     line-height: 1.7;
     font-weight: 700;
     background: var(--accent);
@@ -194,8 +208,6 @@ header h2 {
     box-shadow: var(--shadow);
     padding: 2rem 2.5rem;
     margin: 0 auto 2.5rem;
-    max-width: 100%;
-    text-align: center;
 }
 
 #about-me strong {
@@ -213,16 +225,20 @@ header h2 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 3.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
 }
 
 .project-card {
+    min-width: 0;
     background: var(--card);
     border: 2px solid var(--ink);
-    padding: 2.5rem;
+    padding: 2rem;
+
     display: flex;
     flex-direction: column;
+
     box-shadow: var(--shadow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -236,13 +252,16 @@ header h2 {
     display: flex;
     align-items: center;
     gap: 6px;
+
     border-bottom: 2px solid var(--ink);
-    margin: -2.5rem -2.5rem 0;
+    margin: -2rem -2rem 0;
     padding: 0.75rem 1.5rem;
+
     background: var(--white);
 }
 
 .dot {
+    flex-shrink: 0;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -272,15 +291,19 @@ header h2 {
 /* PROJECT IMAGES */
 
 .project-image-container {
+    width: calc(100% + 4rem);
     height: 200px;
-    border-bottom: 2px solid var(--ink);
-    margin: 0 -2.5rem 1.5rem;
-    background: var(--white);
+    margin: 0 -2rem 1.5rem;
+
     padding: 15px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     overflow: hidden;
+    background: var(--white);
+    border-bottom: 2px solid var(--ink);
 }
 
 .project-preview-img {
@@ -292,11 +315,14 @@ header h2 {
 .project-placeholder {
     width: 100%;
     height: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     background: var(--accent);
     border: 2px dashed var(--ink);
+
     font-family: var(--font-mono);
     font-weight: 700;
 }
@@ -305,9 +331,10 @@ header h2 {
 
 .project-card h3 {
     font-family: var(--font-mono);
-    font-size: 1.15rem;
+    font-size: clamp(1rem, 2vw, 1.15rem);
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
 }
 
 .markdown-body {
@@ -326,6 +353,7 @@ header h2 {
 
 .md-section p {
     font-size: 0.95rem;
+    overflow-wrap: break-word;
 }
 
 .project-tech {
@@ -336,11 +364,13 @@ header h2 {
     background: var(--white);
     padding: 0.6rem 0.75rem;
     border-left: 4px solid var(--ink);
+    overflow-wrap: anywhere;
 }
 
 .project-links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 /* ===== 7. BUTTONS ===== */
@@ -348,12 +378,16 @@ header h2 {
 .btn {
     display: inline-block;
     flex: 1;
+    min-width: 0;
+
     background: var(--ink);
     color: var(--beige);
-    padding: 0.8rem 1.4rem;
+
+    padding: 0.8rem 1rem;
     font-size: 0.95rem;
     font-weight: 700;
     text-align: center;
+
     border: 2px solid var(--ink);
     box-shadow: 3px 3px 0 var(--ink);
 }
@@ -384,7 +418,7 @@ header h2 {
 }
 
 .hero-actions .btn {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
 }
 
 /* ===== 8. SKILLS ===== */
@@ -414,17 +448,18 @@ header h2 {
 /* ===== 9. FOOTER ===== */
 
 footer {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    padding: 9rem 2rem 7rem;
+    width: 100%;
+    padding: 7rem 2rem;
+
     text-align: center;
     background: var(--ink);
     color: var(--beige);
-    scroll-margin-top: 3.5rem;
+
+    scroll-margin-top: 85px;
 }
 
 footer h2 {
-    font-size: 2.4rem;
+    font-size: clamp(2rem, 4vw, 2.4rem);
     color: var(--white);
     margin-bottom: 1.25rem;
 }
@@ -439,16 +474,18 @@ footer p {
 .contact-links {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 1rem 3rem;
     margin-bottom: 4rem;
 }
 
 .contact-links a {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     font-weight: 700;
     border-bottom: 3px solid var(--muted);
     padding-bottom: 0.3rem;
+    overflow-wrap: anywhere;
 }
 
 .contact-links a:hover {
@@ -462,50 +499,104 @@ footer .credits {
     margin: 0;
 }
 
-/* ===== 10. MOBILE ===== */
+/* ===== 10. TABLETS ===== */
+
+@media (max-width: 1024px) {
+
+    section {
+        padding: 5rem 2rem;
+    }
+
+    #about-me {
+        padding: 5rem 2rem;
+    }
+
+    .projects-grid {
+        gap: 2rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .card-header-tech {
+        margin: -1.5rem -1.5rem 0;
+    }
+
+    .project-image-container {
+        width: calc(100% + 3rem);
+        margin: 0 -1.5rem 1.5rem;
+    }
+
+}
+
+/* ===== 11. MOBILE ===== */
 
 @media (max-width: 768px) {
 
     html {
         font-size: 15px;
+        scroll-padding-top: 110px;
+    }
+
+    nav {
+        padding: 0.65rem 0.5rem;
+    }
+
+    nav ul {
+        gap: 0.3rem;
+    }
+
+    nav a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    header {
+        min-height: auto;
+        padding: 5rem 1.5rem;
+    }
+
+    .profile-img-container {
+        margin-bottom: 1.8rem;
+    }
+
+    .profile-img {
+        width: 155px;
+        height: 155px;
     }
 
     header h1 {
-        font-size: 2.2rem;
+        font-size: clamp(1.9rem, 7vw, 2.5rem);
+    }
+
+    header h2 {
+        font-size: 1.15rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        gap: 0.8rem;
+    }
+
+    .hero-actions .btn {
+        flex: 1 1 180px;
     }
 
     section {
-        padding: 4.5rem 1.5rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card {
-        padding: 1.75rem;
-    }
-
-    .card-header-tech {
-        margin: -1.75rem -1.75rem 0;
-    }
-
-    .project-image-container {
-        margin: 0 -1.75rem 1.5rem;
-        padding: 10px;
-    }
-
-    .project-links {
-        flex-direction: column;
-        gap: 0.75rem;
+        padding: 4rem 1.5rem;
     }
 
     #about-me {
-        padding: 4.5rem 1.5rem;
+        padding: 4rem 1.5rem;
     }
 
     #about-me h2 {
-        font-size: 2.1rem;
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
 
     #about-me p {
@@ -514,16 +605,199 @@ footer .credits {
     }
 
     #about-me .lead {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         padding: 1.5rem;
+    }
+
+    .subtitle {
+        margin-bottom: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .card-header-tech {
+        margin: -1.5rem -1.5rem 0;
+    }
+
+    .project-image-container {
+        width: calc(100% + 3rem);
+        height: 220px;
+        margin: 0 -1.5rem 1.5rem;
+        padding: 12px;
+    }
+
+    .project-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .project-links .btn {
+        width: 100%;
+        flex: auto;
+    }
+
+    .skills-list {
+        gap: 0.8rem;
+    }
+
+    .skills-list li {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 5rem 1.5rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    .contact-links {
+        gap: 1.5rem;
     }
 
 }
 
-/* ===== 11. ANIMATIONS ===== */
+/* ===== 12. SMALL MOBILE ===== */
+
+@media (max-width: 480px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    nav ul {
+        gap: 0.15rem;
+    }
+
+    nav a {
+        font-size: 0.72rem;
+        padding: 0.35rem 0.45rem;
+    }
+
+    header {
+        padding: 4rem 1.2rem;
+    }
+
+    .profile-img {
+        width: 135px;
+        height: 135px;
+    }
+
+    header h1 {
+        font-size: 1.9rem;
+    }
+
+    header h2 {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        flex: auto;
+    }
+
+    section,
+    #about-me {
+        padding: 3.5rem 1.2rem;
+    }
+
+    #about-me .lead {
+        padding: 1.2rem;
+    }
+
+    .project-card {
+        padding: 1.2rem;
+    }
+
+    .card-header-tech {
+        margin: -1.2rem -1.2rem 0;
+        padding: 0.7rem 1rem;
+    }
+
+    .project-image-container {
+        width: calc(100% + 2.4rem);
+        height: 180px;
+        margin: 0 -1.2rem 1.2rem;
+        padding: 10px;
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+    }
+
+    .project-tech {
+        font-size: 0.75rem;
+    }
+
+    .skills-list {
+        gap: 0.7rem;
+    }
+
+    .skills-list li {
+        font-size: 0.82rem;
+        padding: 0.55rem 0.8rem;
+    }
+
+    footer {
+        padding: 4rem 1.2rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .contact-links a {
+        font-size: 0.95rem;
+    }
+
+}
+
+/* ===== 13. EXTRA SMALL DEVICES ===== */
+
+@media (max-width: 350px) {
+
+    nav a {
+        font-size: 0.68rem;
+        padding: 0.3rem;
+    }
+
+    header h1 {
+        font-size: 1.65rem;
+    }
+
+    .project-card {
+        padding: 1rem;
+    }
+
+    .card-header-tech {
+        margin: -1rem -1rem 0;
+    }
+
+    .project-image-container {
+        width: calc(100% + 2rem);
+        margin: 0 -1rem 1rem;
+    }
+
+}
+
+/* ===== 14. ANIMATIONS ===== */
 
 @keyframes fadeInUp {
-
     from {
         opacity: 0;
         transform: translateY(25px);
@@ -533,7 +807,6 @@ footer .credits {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
 .anim-fade-1,
@@ -560,7 +833,7 @@ footer .credits {
     animation-delay: 0.75s;
 }
 
-/* ===== 12. ACCESSIBILITY ===== */
+/* ===== 15. ACCESSIBILITY ===== */
 
 @media (prefers-reduced-motion: reduce) {
 
